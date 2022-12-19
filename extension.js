@@ -11,7 +11,6 @@ const configuration = new Configuration({
   
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
-
 /**
  * @param {vscode.ExtensionContext} context
  */
@@ -32,6 +31,7 @@ function activate(context) {
 
 		// Get the document text
 		let fileContent = document.getText();
+		console.log('Running the request');
 
 		//send request
 		let data = await openai.createCompletion({
@@ -48,10 +48,12 @@ function activate(context) {
 			console.log(result)
 			return result;
 		}).catch((err) => {
-			return err;
+			return "Sorry. An error occured please try again later";
 		});
-
+		console.log('Recieved data');
+		console.log(data);
 		vscode.window.showInformationMessage(data);
+
 	});
 	context.subscriptions.push(disposable);
 }
