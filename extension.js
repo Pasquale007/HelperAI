@@ -48,6 +48,7 @@ function activate(context) {
 			console.log(result)
 			return result;
 		}).catch((err) => {
+			console.log(err);
 			return "Sorry. An error occured please try again later";
 		});
 		console.log('Recieved data');
