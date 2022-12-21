@@ -1,13 +1,20 @@
 {
+  "repository": {
+    "type": "git",
+    "url": "https://dev.azure.com/WeaAreAName/VSCodeExtension"
+  },
+  "icon": "images/logo.png",
   "publisher": "Pascal007",
   "name": "helperai",
   "displayName": "Helper AI",
-  "description": "This extension help you with your code. It uses AI to check fron phrases in your code and suggest an solution for your problem.",
-  "version": "0.0.3",
+  "description": "This extension supports you at coding. Just ask an AI for help",
+  "version": "0.0.7",
   "engines": {
     "vscode": "^1.74.x"
   },
   "categories": [
+    "Education",
+    "Machine Learning",
     "Other"
   ],
   "activationEvents": [

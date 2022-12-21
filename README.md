@@ -1,4 +1,4 @@
-# helperai README
+# HelperAI - Your personal AI assistant
 
 Do you need help with your development? Then this extension is exactly what you need. Your personal AI assistant is there to support you when you wonder why something doesn't work. 
 
