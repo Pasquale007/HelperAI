@@ -2,12 +2,13 @@
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
 const { Configuration, OpenAIApi } = require('openai');
-
-//Konfiguraitions for openAI
+const { keys } = require('./key.js');
+console.log(keys);
+//Konfiguraition for OpenAI
 const configuration = new Configuration({
-	apiKey: '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',
-  });
-  const openai = new OpenAIApi(configuration);
+	apiKey: keys.API_KEY,
+});
+const openai = new OpenAIApi(configuration);
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -17,7 +18,6 @@ const configuration = new Configuration({
 function activate(context) {
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "helperai" is now active!');
 	const editor = vscode.window.activeTextEditor;
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
