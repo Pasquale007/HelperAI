@@ -3,7 +3,7 @@
 const vscode = require('vscode');
 const { Configuration, OpenAIApi } = require('openai');
 const { keys } = require('./key.js');
-console.log(keys);
+
 //Konfiguraition for OpenAI
 const configuration = new Configuration({
 	apiKey: keys.API_KEY,
