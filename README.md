@@ -6,9 +6,9 @@ Do you need help with your development? Then this extension is exactly what you 
 
 After the installation you are ready to go. Just press `STRG + SHIFT + P` to open the command executor and type "What's Wrong". After a few seconds you will get a push message with possible compiler and logic errors in the current file.
 
-Consider the following example of a React application
+Consider the following example of a React application:
 
-![](images/Fix.gif)
+![Show usecase](images/Fix.gif "Usecase")
 
 > Hint: Activate key bindings so that you can work more quickly
 
@@ -24,4 +24,4 @@ Here you can find the last release notes
 
 
 If you like my extension and want to support me, consider buying me a coffee:
-Pascal0707@gmx.de
+Pascal0707@gmx.de"# HelperAI" 
