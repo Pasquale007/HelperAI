@@ -5,17 +5,16 @@ const { Configuration, OpenAIApi } = require('openai');
 
 //Konfiguraitions for openAI
 const configuration = new Configuration({
-	apiKey: process.env.API_KEY,
+	apiKey: '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',
   });
   const openai = new OpenAIApi(configuration);
-  
+
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 /**
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension "helperai" is now active!');
@@ -25,7 +24,6 @@ function activate(context) {
 	// The commandId parameter must match the command field in package.json
 	let disposable = vscode.commands.registerCommand('helperai.help', async function () {
 		// The code you place here will be executed every time your command is executed
-
 		// Display a message box to the user
 		let document = editor.document;
 

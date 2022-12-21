@@ -1,34 +1,27 @@
 # helperai README
 
-This extension makes it possible to ask an AI for errors in your code. Just ask "Whats wrong" and after a short amount of time the AI will tell you! 
+Do you need help with your development? Then this extension is exactly what you need. Your personal AI assistant is there to support you when you wonder why something doesn't work. 
 
 ## Features
 
-After you installed the extension you can press "STRG + SHIFT + P" to open the command executor. Here you can type "What's wrong" and press ENTER. Now you just have to wait and get an Message what is wrong with your code
+After the installation you are ready to go. Just press `STRG + SHIFT + P` to open the command executor and type "What's Wrong". After a few seconds you will get a push message with possible compiler and logic errors in the current file.
 
-For example if there is an image subfolder under your extension project workspace:
+Consider the following example of a React application
 
-\!\[feature X\]\(images/feature-x.png\)
+![](images/Fix.gif)
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+> Hint: Activate key bindings so that you can work more quickly
 
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
+___
 ## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
+Nothing to see here... yet
 ## Release Notes
+Here you can find the last release notes
+### 0.0.2
+- Released initial publish for Helper AI
+### 0.0.3
+- Migrate to new VSCode version
 
-### 0.0.1
-    Released initial publish for Helper AI
+
+If you like my extension and want to support me, consider buying me a coffee:
+Pascal0707@gmx.de
