@@ -23,6 +23,9 @@ Here you can find the last release notes
 - Migrate to new VSCode version
 ### 0.1.0
 - Add error Message
+### 0.1.1
+- Fix bug "invalid_api"
 
-If you like my extension and want to support me, consider buying me a coffee:
-paypal.me/PascalThurow
+If you like my extension and want to support me, consider buying me a coffee: 
+<br/>
+[Paypal](https://www.paypal.com/paypalme/PascalThurow)

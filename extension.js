@@ -6,7 +6,7 @@ const { keys } = require('./key.js');
 
 //Konfiguraition for OpenAI
 const configuration = new Configuration({
-	apiKey: 'keys.API_KEY',
+	apiKey: keys.API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 

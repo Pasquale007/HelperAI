@@ -8,7 +8,7 @@
   "name": "helperai",
   "displayName": "Helper AI",
   "description": "This extension supports you at coding. Just ask an AI for help",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "engines": {
     "vscode": "^1.74.x"
   },
