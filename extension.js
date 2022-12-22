@@ -6,7 +6,7 @@ const { keys } = require('./key.js');
 
 //Konfiguraition for OpenAI
 const configuration = new Configuration({
-	apiKey: keys.API_KEY,
+	apiKey: 'keys.API_KEY',
 });
 const openai = new OpenAIApi(configuration);
 
@@ -46,8 +46,8 @@ function activate(context) {
 			console.log(result)
 			return result;
 		}).catch((err) => {
-			console.log(err);
-			return "Sorry. An error occured please try again later";
+			console.error(err.response.data.error.code);
+			return err.response.data.error.code + ". Please raise issue at: https://github.com/Pasquale007/HelperAI/issues ";
 		});
 		console.log('Recieved data');
 		console.log(data);

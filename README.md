@@ -21,7 +21,8 @@ Here you can find the last release notes
 - Released initial publish for Helper AI
 ### 0.0.3
 - Migrate to new VSCode version
-
+### 0.1.0
+- Add error Message
 
 If you like my extension and want to support me, consider buying me a coffee:
-Pascal0707@gmx.de"# HelperAI" 
+paypal.me/PascalThurow
