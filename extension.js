@@ -1,13 +1,16 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
 const { Configuration, OpenAIApi } = require('openai');
-const { keys } = require('./key.js');
 
 //Konfiguraition for OpenAI
-const configuration = new Configuration({
-	apiKey: keys.API_KEY,
+const user_key = process.env.HELPER_AI_KEY;
+let configuration = null;
+
+//Temp solution for migrating from master_key to user_key  
+configuration = new Configuration({
+	apiKey: user_key,
 });
+
+
 const openai = new OpenAIApi(configuration);
 
 // This method is called when your extension is activated
@@ -15,26 +18,29 @@ const openai = new OpenAIApi(configuration);
 /**
  * @param {vscode.ExtensionContext} context
  */
+
 function activate(context) {
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
 	const editor = vscode.window.activeTextEditor;
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with  registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('helperai.help', async function () {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
+
+	let whatIsWrong = vscode.commands.registerCommand('helperai.help', async function () {
 		let document = editor.document;
-
-		// Get the document text
 		let fileContent = document.getText();
-		console.log('Running the request');
+		sendRequest(fileContent);
+	});
 
+	context.subscriptions.push(whatIsWrong);
+
+	function printResponse(response) {
+		console.log('Recieved data');
+		console.log(response);
+		vscode.window.showInformationMessage(response);
+	}
+
+	function sendRequest(fileContent) {
+		console.log('Running the request');
 		//send request
-		let data = await openai.createCompletion({
-			model: "text-davinci-003", //old
-			//model: "text-embedding-ada-002", // new
+		openai.createCompletion({
+			model: "text-davinci-003",
 			prompt: "What is wrong with the following code? \n\n" + fileContent,
 			temperature: 1.0,
 			max_tokens: 1000,
@@ -43,19 +49,16 @@ function activate(context) {
 			presence_penalty: 0.0,
 		}).then((response) => {
 			let result = response['data']['choices'][0]['text']
-			console.log(result)
-			return result;
+			console.log(result);
+			printResponse(result);
 		}).catch((err) => {
 			console.error(err.response.data.error.code);
-			return err.response.data.error.code + ". Please raise issue at: https://github.com/Pasquale007/HelperAI/issues ";
+			printResponse(err.response.data.error.code + ". Please raise issue at: https://github.com/Pasquale007/HelperAI/issues ");
 		});
-		console.log('Recieved data');
-		console.log(data);
-		vscode.window.showInformationMessage(data);
+	}
 
-	});
-	context.subscriptions.push(disposable);
 }
+
 
 // This method is called when your extension is deactivated
 function deactivate() { }
